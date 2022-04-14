@@ -1,8 +1,8 @@
 /* See LICENSE file for copyright and license details. */
 
 /* consts */
-#define TERMINAL "alacritty"
-#define TERMCLASS "Alacritty"
+#define TERMINAL "urxvt"
+#define TERMCLASS "URxvt"
 
 /* appearance */
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
@@ -98,8 +98,8 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 	{ MODKEY,                       XK_minus,  setgaps,        {.i = -1 } },
-	{ MODKEY,                       XK_plus,  setgaps,        {.i = +1 } },
-	{ MODKEY|ShiftMask,             XK_plus,  setgaps,        {.i = gappx  } },
+	{ MODKEY,                       XK_plus,   setgaps,        {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_plus,   setgaps,        {.i = 10  } },
 	{ MODKEY,						XK_z,      shiftview,	   {.i = -1 } },
 	{ MODKEY,						XK_x,      shiftview,	   {.i = +1 } },
 	TAGKEYS(                        XK_1,                      0)
