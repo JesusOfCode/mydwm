@@ -10,6 +10,7 @@ static const unsigned int gappx     = 10;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
+static const double defaultopacity  = 1.0;
 static const char *fonts[]          = { "Anonymice Nerd Font Mono:size=14"};
 static const char dmenufont[]       = "monospace:size=10";
 //bg color
@@ -75,8 +76,12 @@ static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,             			XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY|ShiftMask,				XK_s,	   spawn,	  	   SHCMD("transset -a --dec .1") },
+	{ MODKEY|ShiftMask,				XK_d,	   spawn,	  	   SHCMD("transset -a --inc .1") },
+	{ MODKEY|ShiftMask,				XK_f,	   spawn,	 	   SHCMD("transset -a 1.0") },
 	{ MODKEY,             			XK_w, 	   spawn,          SHCMD("librewolf") },
 	{ MODKEY|ShiftMask,        		XK_w, 	   spawn,          SHCMD(TERMINAL " -e lfub && wal -R && clear") },
+	{ MODKEY,             			XK_Insert, spawn,  		   SHCMD("flameshot gui") },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
@@ -93,8 +98,8 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
-	{ MODKEY,                       XK_q, 	   focusmon,       {.i = +1 } },
-	{ MODKEY|ShiftMask,             XK_q,	   tagmon,         {.i = +1 } },
+	{ MODKEY,                       XK_a, 	   focusmon,       {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_a,	   tagmon,         {.i = +1 } },
 	//{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
 	//{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	//{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
