@@ -6,7 +6,7 @@
 
 /* appearance */
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
-static const unsigned int gappx     = 10;        /* gaps between windows */
+static const unsigned int gappx     = 30;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
@@ -22,7 +22,7 @@ static const char col_gray3[]       = "#bbbbbb";
 //current tag and window font color
 static const char col_gray4[]       = "#eeeeee";
 //top bar second color and active window color
-static const char col_cyan[]        = "#51874d";
+static const char col_cyan[]        = "#8b9b64";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -30,7 +30,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "", "", "", "", "ﭮ" };
+static const char *tags[] = { "", "", "", "", "ﭮ", "" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -84,8 +84,8 @@ static Key keys[] = {
 	{ MODKEY,             			XK_Insert, spawn,  		   SHCMD("flameshot gui") },
 	{ MODKEY,                       XK_d,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
-	//{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
-	//{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
+	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_i,      incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_Left,   setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_Right,  setmfact,       {.f = +0.05} },
 	{ MODKEY,                       XK_s, 	   zoom,           {0} },
@@ -105,8 +105,9 @@ static Key keys[] = {
 	//{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	//{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 	{ MODKEY,                       XK_minus,  setgaps,        {.i = -1 } },
+	{ MODKEY|ShiftMask,             XK_minus,  setgaps,        {.i = -30 } },
 	{ MODKEY,                       XK_plus,   setgaps,        {.i = +1 } },
-	{ MODKEY|ShiftMask,             XK_plus,   setgaps,        {.i = 10  } },
+	{ MODKEY|ShiftMask,             XK_plus,   setgaps,        {.i = +30  } },
 	{ MODKEY,						XK_z,      shiftview,	   {.i = -1 } },
 	{ MODKEY,						XK_x,      shiftview,	   {.i = +1 } },
 	TAGKEYS(                        XK_1,                      0)
