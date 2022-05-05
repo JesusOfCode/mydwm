@@ -1,12 +1,12 @@
 /* See LICENSE file for copyright and license details. */
 
 /* consts */
-#define TERMINAL "urxvt"
-#define TERMCLASS "URxvt"
+#define TERMINAL "alacritty"
+#define TERMCLASS "Alacritty"
 
 /* appearance */
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
-static const unsigned int gappx     = 30;        /* gaps between windows */
+static const unsigned int gappx     = 29;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
