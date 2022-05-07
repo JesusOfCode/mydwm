@@ -75,6 +75,7 @@ static const char *termcmd[]  = { TERMINAL, NULL };
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
+	{ MODKEY|ShiftMask,             XK_p,      spawn,          SHCMD("pavucontrol") },
 	{ MODKEY,             			XK_Return, spawn,          {.v = termcmd } },
 	//{ MODKEY|ShiftMask,				XK_s,	   spawn,	  	   SHCMD("transset -a --dec .1") },
 	//{ MODKEY|ShiftMask,				XK_d,	   spawn,	  	   SHCMD("transset -a --inc .1") },
@@ -105,9 +106,9 @@ static Key keys[] = {
 	//{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	//{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 	{ MODKEY,                       XK_minus,  setgaps,        {.i = -1 } },
-	{ MODKEY|ShiftMask,             XK_minus,  setgaps,        {.i = -30 } },
+	{ MODKEY|ShiftMask,             XK_minus,  setgaps,        {.i = -8 } },
 	{ MODKEY,                       XK_plus,   setgaps,        {.i = +1 } },
-	{ MODKEY|ShiftMask,             XK_plus,   setgaps,        {.i = +30  } },
+	{ MODKEY|ShiftMask,             XK_plus,   setgaps,        {.i = +8 } },
 	{ MODKEY,						XK_z,      shiftview,	   {.i = -1 } },
 	{ MODKEY,						XK_x,      shiftview,	   {.i = +1 } },
 	TAGKEYS(                        XK_1,                      0)
