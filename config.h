@@ -6,7 +6,7 @@
 
 /* appearance */
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
-static const unsigned int gappx     = 8;       /* gaps between windows */
+static const unsigned int gappx     = 5;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
@@ -22,7 +22,7 @@ static const char col_gray3[]       = "#bbbbbb";
 //current tag and window font color
 static const char col_gray4[]       = "#eeeeee";
 //top bar second color and active window color
-static const char col_cyan[]        = "#8b9b64";
+static const char col_cyan[]        = "#526e99";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -106,9 +106,9 @@ static Key keys[] = {
 	//{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	//{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 	{ MODKEY,                       XK_minus,  setgaps,        {.i = -1 } },
-	{ MODKEY|ShiftMask,             XK_minus,  setgaps,        {.i = -8 } },
+	{ MODKEY|ShiftMask,             XK_minus,  setgaps,        {.i = -5 } },
 	{ MODKEY,                       XK_plus,   setgaps,        {.i = +1 } },
-	{ MODKEY|ShiftMask,             XK_plus,   setgaps,        {.i = +8 } },
+	{ MODKEY|ShiftMask,             XK_plus,   setgaps,        {.i = +5 } },
 	{ MODKEY,						XK_z,      shiftview,	   {.i = -1 } },
 	{ MODKEY,						XK_x,      shiftview,	   {.i = +1 } },
 	TAGKEYS(                        XK_1,                      0)
