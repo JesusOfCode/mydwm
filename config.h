@@ -13,16 +13,14 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const double defaultopacity  = 1.0;
 static const char *fonts[]          = { "TerminessTTF Nerd Font:size=14"};
 static const char dmenufont[]       = "monospace:size=10";
-//bg color
+
 static const char col_gray1[]       = "#000000";
-//inactive window border
 static const char col_gray2[]       = "#444444";
-//font color
 static const char col_gray3[]       = "#bbbbbb";
-//current tag and window font color
 static const char col_gray4[]       = "#eeeeee";
 static const char col_ylw[]         = "#f9f348";
 static const char col_blu[]         = "#3f5e89";
+
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -39,6 +37,8 @@ static const Rule rules[] = {
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
+	{ "Pinentry-gtk-2",     NULL,       NULL,       0,            1,           -1 },
+	{ "Nvidia-settings",      NULL,       NULL,       0,            1,           -1 },	
 	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
 };
 
